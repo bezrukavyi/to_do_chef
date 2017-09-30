@@ -1,7 +1,7 @@
 server {
   listen 80;
   server_name _;
-  return $scheme://146.185.145.228$request_uri;
+  return $scheme://95.85.9.236$request_uri;
 }
 
 server {
@@ -9,7 +9,7 @@ server {
 
   client_max_body_size 100m;
 
-  server_name 146.185.145.228;
+  server_name 95.85.9.236;
   root /home/deployer/www/project/current/public;
 
   location ~*  \.(jpg|jpeg|png|gif|ico|css|js)$ {
