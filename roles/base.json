@@ -18,8 +18,14 @@
       "deployer"
     ],
     "nodejs": {
-      "version": "0.12.18",
-      "install_method": "package"
+      "version": "7.9.0",
+      "binary": {
+        "checksum": "d8910cf0dd90be84c07df179512cf2e36659a92726e67e8dc8bc8b457fe6e5ee"
+      },
+      "install_method": "binary",
+      "npm": {
+        "install_method": "embedded"
+      }
     },
     "rvm": {
       "user_installs": [
@@ -75,12 +81,30 @@
             "port": "443",
             "protocol": "tcp"
           },
+          "monit": {
+            "port": "2812",
+            "protocol": "tcp"
+          },
           "redis": {
             "port": "6379",
             "protocol": "tcp"
           }
         }
       ]
+    },
+    "monit": {
+      "mail_alerts": false,
+      "web_interface": {
+        "enable": true,
+        "port": 2812,
+        "address": false,
+        "allow": [
+          "admin:2rG8b99N"
+        ]
+      }
+    },
+    "swap_tuning": {
+      "minimum_size": 1024
     },
     "nginx": {
       "version": "1.11.10",
@@ -119,9 +143,10 @@
     "recipe[rvm::user]",
     "recipe[nodejs]",
     "recipe[apt-packages]",
+    "recipe[monit]",
     "recipe[redisio]",
     "recipe[redisio::enable]",
     "recipe[ncdu]",
-    "recipe[chef-nginx::production]"
+    "recipe[swap_tuning]"
   ]
 }
