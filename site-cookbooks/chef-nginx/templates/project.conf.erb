@@ -1,7 +1,7 @@
 server {
   listen 80;
   server_name _;
-  return $scheme://95.85.9.236$request_uri;
+  return $scheme://146.185.175.244$request_uri;
 }
 
 server {
@@ -9,11 +9,19 @@ server {
 
   client_max_body_size 100m;
 
-  server_name 95.85.9.236;
+  server_name 146.185.175.244;
   root /home/deployer/www/project/current/public;
 
   location ~*  \.(jpg|jpeg|png|gif|ico|css|js)$ {
     expires 365d;
+  }
+
+  location /monit/ {
+    rewrite ^/monit/(.*) /$1 break;
+    proxy_ignore_client_abort on;
+    proxy_pass   http://127.0.0.1:2812;
+    proxy_redirect  http://127.0.0.1:2812 /monit;
+    proxy_cookie_path / /monit/;
   }
 
   location / {
