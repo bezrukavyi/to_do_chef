@@ -18,8 +18,15 @@
       "deployer"
     ],
     "nodejs": {
-      "version": "0.12.18",
-       "install_method": "package"
+      "version": "8.5.0",
+      "binary": {
+        "checksum": "a9651fcc6259b4a944ebb72e6dd116602c7b26ddf939599b060d1d3e6ead8c36"
+      },
+      "install_method": "binary",
+      "npm": {
+        "version": "5.4.2",
+        "install_method": "embedded"
+      }
     },
     "rvm": {
       "user_installs": [
