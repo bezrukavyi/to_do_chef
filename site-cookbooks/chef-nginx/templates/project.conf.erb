@@ -5,7 +5,7 @@ upstream api {
 server {
   listen 80;
   server_name _;
-  return $scheme://146.185.175.244$request_uri;
+  return $scheme://198.211.119.82$request_uri;
 }
 
 server {
@@ -13,7 +13,7 @@ server {
 
   client_max_body_size 100m;
 
-  server_name 146.185.175.244;
+  server_name 198.211.119.82;
   root /home/deployer/www/to_do_api/current/public;
 
   location ~*  \.(jpg|jpeg|png|gif|ico|css|js)$ {

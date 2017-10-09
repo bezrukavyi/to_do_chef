@@ -19,7 +19,7 @@
     ],
     "nodejs": {
       "version": "0.12.18",
-      "install_method": "package"
+       "install_method": "package"
     },
     "rvm": {
       "user_installs": [
@@ -137,8 +137,6 @@
     "recipe[monit]",
     "recipe[redisio]",
     "recipe[redisio::enable]",
-    "recipe[ncdu]",
-    "recipe[chef-nginx::production]",
-    "recipe[chef-monit::production]"
+    "recipe[ncdu]"
   ]
 }
